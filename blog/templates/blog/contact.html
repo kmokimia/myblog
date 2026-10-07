@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}تماس با من - بلاگ من{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="contact-container">
+        <h1>تماس با من</h1>
+        <div class="contact-info">
+            <p>ایمیل: your.email@example.com</p>
+            <p>گیت‌هاب: github.com/yourusername</p>
+            <p>لینکدین: linkedin.com/in/yourusername</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .contact-container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-container h1 {
+        color: #2c3e50;
+        margin-bottom: 30px;
+    }
+
+    .contact-info {
+        line-height: 2.5;
+        color: #555;
+        font-size: 1.1rem;
+    }
+</style>
+{% endblock %}

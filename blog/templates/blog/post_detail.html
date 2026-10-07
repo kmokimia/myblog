@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ post.title }} - بلاگ من{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="article-container">
+        <h1 class="article-title">{{ post.title }}</h1>
+        <div class="article-meta">
+            <span>نویسنده: {{ post.author }}</span> |
+            <span>تاریخ انتشار: {{ post.created_at|date:"Y/m/d" }}</span>
+        </div>
+        <div class="article-content">
+            {{ post.content|linebreaks }}
+        </div>
+        <div class="mt-4">
+            <a href="{% url 'post_list' %}" class="btn btn-primary">بازگشت به لیست مقالات</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .article-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-title {
+        color: #2c3e50;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .article-meta {
+        color: #888;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #eee;
+    }
+
+    .article-content {
+        color: #333;
+        line-height: 2;
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+</style>
+{% endblock %}

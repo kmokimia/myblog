@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}درباره من - بلاگ من{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="about-container">
+        <h1>درباره من</h1>
+        <p>سلام! من یک برنامه‌نویس پایتون هستم و این بلاگ رو ساختم تا تجربیات، ایده‌ها و یادگیری‌هام رو با شما به اشتراک
+            بذارم.</p>
+        <p>علاقه‌مند به تکنولوژی، هوش مصنوعی و توسعه وب هستم. امیدوارم مطالب این بلاگ براتون مفید باشه.</p>
+    </div>
+</div>
+
+<style>
+    .about-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-container h1 {
+        color: #2c3e50;
+        margin-bottom: 30px;
+    }
+
+    .about-container p {
+        line-height: 2;
+        color: #555;
+        font-size: 1.1rem;
+    }
+</style>
+{% endblock %}

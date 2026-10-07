@@ -1,0 +1,60 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}بلاگ من{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 text-lg-start text-center">
+                <h1>به بلاگ من خوش آمدید</h1>
+                <p>اینجا جایی است که افکار، ایده‌ها و تجربیاتم را به اشتراک می‌گذارم</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card post-card">
+                <div class="card-body">
+                    <h3 class="card-title">{{ post.title }}</h3>
+                    <div class="post-meta">
+                        <span>نویسنده: {{ post.author }}</span>
+                        <span>تاریخ: {{ post.created_at|date:"Y/m/d" }}</span>
+                    </div>
+                    <p class="card-text">{{ post.content|truncatewords:30 }}</p>
+                    <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">ادامه مطلب</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">هنوز مقاله‌ای منتشر نشده است.</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 50px 0;
+        margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+</style>
+{% endblock %}
